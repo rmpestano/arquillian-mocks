@@ -1,5 +1,5 @@
 Sample code for the blog post: https://rpestano.wordpress.com/2014/10/25/arquillian-and-mocks/
 
-image:https://travis-ci.org/rmpestano/arquillian-mocks.sgv[Build Status, link=https://travis-ci.org/rmpestano/arquillian-mocks]
+image:https://travis-ci.org/rmpestano/arquillian-mocks.svg[Build Status, link=https://travis-ci.org/rmpestano/arquillian-mocks]
 
 
