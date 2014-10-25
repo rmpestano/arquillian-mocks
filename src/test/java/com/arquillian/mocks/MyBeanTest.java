@@ -35,6 +35,7 @@ public class MyBeanTest {
     public void setupMock() {
         realMockedBean = Mockito.mock(MyBeanImpl.class);//to use @Mock see auto discover extension: https://github.com/arquillian/arquillian-showcase/blob/master/extensions/autodiscover
         Mockito.when(realMockedBean.someSlowOperation()).thenReturn(true);
+        Mockito.when(realMockedBean.isAlive()).thenReturn(true);
     }
 
 
@@ -56,6 +57,7 @@ public class MyBeanTest {
     public void shouldRunFastWithAlternativeBean() {
         long start = System.currentTimeMillis();
         assertTrue(myAlternativebean.someSlowOperation());
+        assertTrue(myAlternativebean.isAlive());
         assertTrue((System.currentTimeMillis() - start) < 10000);
     }
 
@@ -64,6 +66,7 @@ public class MyBeanTest {
     public void shouldRunFastWithSpecializedBean() {
         long start = System.currentTimeMillis();
         assertTrue(mySpecializedBean.someSlowOperation());
+        assertTrue(mySpecializedBean.isAlive());
         assertTrue((System.currentTimeMillis() - start) < 10000);
     }
 
@@ -72,6 +75,7 @@ public class MyBeanTest {
     public void shouldRunFastWithMockedBean() {
         long start = System.currentTimeMillis();
         assertTrue(realMockedBean.someSlowOperation());
+        assertTrue(realMockedBean.isAlive());
         assertTrue((System.currentTimeMillis() - start) < 10000);
     }
 

@@ -6,4 +6,6 @@ package com.arquillian.mocks;
 public interface MyBean {
 
     boolean someSlowOperation() ;
+
+    boolean isAlive();
 }

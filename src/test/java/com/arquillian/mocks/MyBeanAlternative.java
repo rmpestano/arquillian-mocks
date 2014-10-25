@@ -13,4 +13,9 @@ public class MyBeanAlternative implements MyBean {
     public boolean someSlowOperation() {
          return true;
     }
+
+    @Override
+    public boolean isAlive() {
+        return true;
+    }
 }
