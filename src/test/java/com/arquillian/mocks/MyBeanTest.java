@@ -1,6 +1,7 @@
 package com.arquillian.mocks;
 
 import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.extension.byteman.api.BMRule;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.junit.InSequence;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -81,6 +82,18 @@ public class MyBeanTest {
 
     @Test
     @InSequence(4)
+    @BMRule(
+            name = "fake method call", targetClass = "MyBeanImpl", targetMethod = "someSlowOperation",
+            action = "return true;")
+    public void shouldRunFastWithBytecodeManipulatedBean() {
+        long start = System.currentTimeMillis();
+        assertTrue(realMockedBean.someSlowOperation());
+        assertTrue(realMockedBean.isAlive());
+        assertTrue((System.currentTimeMillis() - start) < 10000);
+    }
+
+    @Test
+    @InSequence(5)
     public void shouldRunSlowWithRealBean() {
         long start = System.currentTimeMillis();
         assertTrue(realBean.someSlowOperation());
