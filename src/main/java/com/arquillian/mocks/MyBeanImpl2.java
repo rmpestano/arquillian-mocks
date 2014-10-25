@@ -3,7 +3,7 @@ package com.arquillian.mocks;
 import javax.enterprise.context.RequestScoped;
 
 @RequestScoped
-public class MyBean2 {
+public class MyBeanImpl2 {
 
 
     public boolean someSlowOperation() {

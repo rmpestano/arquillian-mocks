@@ -6,7 +6,7 @@ import javax.enterprise.inject.Alternative;
  * Created by rmpestano on 10/25/14.
  */
 @Alternative
-public class MyBeanAlternative implements SimpleBean {
+public class MyBeanAlternative implements MyBean {
 
 
     @Override
