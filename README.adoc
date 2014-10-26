@@ -1,5 +1,10 @@
 Sample code for the blog post: https://rpestano.wordpress.com/2014/10/25/arquillian-and-mocks/
 
+to run tests use: 
+``` mvn clean package ```
+
 image:https://travis-ci.org/rmpestano/arquillian-mocks.svg[Build Status, link=https://travis-ci.org/rmpestano/arquillian-mocks]
+
+
 
 
